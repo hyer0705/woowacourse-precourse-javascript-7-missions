@@ -1,5 +1,8 @@
 import { Console } from '@woowacourse/mission-utils';
-import { ERROR_MESSAGE_PREFIX, ERROR_MESSAGES } from './constants/ErrorMessage';
+import {
+  ERROR_MESSAGE_PREFIX,
+  ERROR_MESSAGES,
+} from './constants/ErrorMessage.js';
 
 class Calculator {
   static CUSTOM_DELIMITER_PREFIX = '//';
