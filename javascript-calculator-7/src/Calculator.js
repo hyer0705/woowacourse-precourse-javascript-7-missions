@@ -1,4 +1,5 @@
 import { Console } from '@woowacourse/mission-utils';
+import { ERROR_MESSAGE_PREFIX, ERROR_MESSAGES } from './constants/ErrorMessage';
 
 class Calculator {
   static CUSTOM_DELIMITER_PREFIX = '//';
@@ -48,9 +49,11 @@ class Calculator {
   validate(numbers) {
     for (let i = 0; i < numbers.length; i++) {
       if (Number.isNaN(numbers[i]))
-        throw new Error('[ERROR] 계산할 값은 양수로 입력해주세요.');
+        throw new Error(`${ERROR_MESSAGE_PREFIX} ${ERROR_MESSAGES.notANumber}`);
       if (numbers[i] < 0)
-        throw new Error('[ERROR] 입력 값은 음수일 수 없습니다.');
+        throw new Error(
+          `${ERROR_MESSAGE_PREFIX} ${ERROR_MESSAGES.notPositive}`,
+        );
     }
   }
 }
