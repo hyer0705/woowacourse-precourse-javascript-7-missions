@@ -1,0 +1,22 @@
+{
+  "name": "woowacourse-precourse-javascript-7-missions",
+  "version": "1.0.0",
+  "description": "우아한테크코스 프리코스 미션을 복습하며 다시 구현한 결과물을 모아둔 저장소입니다.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/eslintrc": "^3.2.0",
+    "@eslint/js": "^9.16.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.31.0",
+    "globals": "^15.12.0",
+    "prettier": "^3.4.1"
+  }
+}
