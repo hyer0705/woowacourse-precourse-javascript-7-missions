@@ -15,4 +15,10 @@ describe('Calculator class', () => {
 
     expect(calculator.sum('//;\n1;2;3')).toBe(6);
   });
+
+  test('sum() - 사용자가 잘못된 값을 입력한 경우 테스트', () => {
+    const calculator = new Calculator();
+
+    expect(calculator.sum('1,-2,3')).toThrow();
+  });
 });
