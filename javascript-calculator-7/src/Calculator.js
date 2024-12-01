@@ -15,16 +15,18 @@ class Calculator {
 
     if (input.startsWith('//')) {
       const customDelimiter = input.split('\\n')[0].substring(2);
-      const inputNums = input.split('\n')[1];
+      const inputNums = input.split('\\n')[1];
 
-      return this.calculate(customDelimiter, inputNums);
+      const escapedDelimiter = this.escapeRegExp(customDelimiter);
+      return this.calculate(escapedDelimiter, inputNums);
     }
 
     return this.calculate(/,|:/, input);
   }
 
   calculate(delimiter, inputNumbers) {
-    const numbers = inputNumbers.split(delimiter).map(Number);
+    const delimiterRegExp = new RegExp(delimiter);
+    const numbers = inputNumbers.split(delimiterRegExp).map(Number);
 
     this.validate(numbers);
 
@@ -32,6 +34,10 @@ class Calculator {
       (previousValue, currentNumbers) => previousValue + currentNumbers,
       0,
     );
+  }
+
+  escapeRegExp(string) {
+    return string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); // $& means the whole matched string
   }
 
   validate(numbers) {
