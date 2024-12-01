@@ -21,5 +21,6 @@ describe('Calculator class', () => {
     const calculator = new Calculator();
 
     expect(() => calculator.sum('1,-2,3')).toThrow();
+    expect(() => calculator.sum('1,-,3')).toThrow();
   });
 });
